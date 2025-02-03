@@ -1,5 +1,5 @@
 """
-Helper utilities (hashing, JSON I/O, etc.)
+Helper utilities (hashing, JSON I/O, JSON schema validation.)
 
 Functions:
     hash_string(input_string: str) -> str:
@@ -8,9 +8,12 @@ Functions:
     read_json_file(file_path: str) -> dict:
         Reads a JSON file from the specified file path and returns its contents as a dictionary.
 
+    load_json_schema(schema_file: dict) -> bool:
+        Loads the JSON schema file that we define for our use case
+        
     write_json_file(data: dict, file_path: str) -> None:
         Writes the given dictionary to a JSON file at the specified file path.
-
+        
     validate_json_schema(data: dict, schema: dict) -> bool:
         Validates the given dictionary against the provided JSON schema.
 """
