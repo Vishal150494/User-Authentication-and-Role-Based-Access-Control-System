@@ -2,7 +2,7 @@
 Helper utilities (hashing, JSON I/O, JSON schema validation.)
 
 Functions:
-    hash_string(input_string: str) -> str:
+    hash_password(input_string: str) -> str:
         Generates a SHA-256 hash for the given input string.
 
     read_json_file(file_path: str) -> dict:
@@ -52,19 +52,19 @@ def load_json_schema(schema_file: dict):
         schema_file (dict): schema for the JSON user data file
 
     Returns:
-        _type_: parsed JSON schema
+        dict: parsed JSON schema
     """
     with open(schema_file, 'r') as file:
         return json.load(file)
  
-def hash_string(password: str):
+def hash_password(password: str):
     """Hash password for secure storage
 
     Args:
         password (str): user password
 
     Returns:
-        _type_: hexadecimal string
+        str: hexadecimal string of the hashed password
     """
     return hashlib.sha256(password.encode()).hexdigest()
 
@@ -76,7 +76,7 @@ def validate_json_schema(data: dict, schema_file = 'schema.json'):
         schema_file (str, optional): schema defined for the user data JSON file. Defaults to 'schema.json'.
 
     Returns:
-        _type_: True if data matches the schema, False if data varies from the schema
+        bool: True if data matches the schema, False if data varies from the schema
     """
     schema = load_json_schema(schema_file)
     try:
