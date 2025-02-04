@@ -1,3 +1,22 @@
+"""
+This module defines the SessionManager class, which is responsible for managing user sessions in an authentication system. It inherits from the AuthManager class and provides methods to create, validate, and potentially terminate user sessions.
+
+CLASSES:
+    SessionManager: 
+        Manages user sessions, including creation and validation.
+METHODS:
+    __init__: 
+        Initializes the SessionManager by calling the parent AuthManager's initializer.
+        
+    _generate_session_token: 
+        Generates a random session token.
+        
+    create_session: 
+        Creates a session for a logged-in user, storing the session token and expiry time.
+        
+    validate_session: 
+        Validates a session token and checks if it has expired.
+"""
 import random
 import string
 from datetime import datetime, timedelta, timezone

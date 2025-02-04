@@ -4,6 +4,10 @@ User authentication (register, login, logout)
 This module provides functionalities for user authentication including
 registration, login, and logout.
 
+Classes:
+    AuthManager:
+        Manages user authentication and session handling.
+
 Functions:
     create_account(username: str, password: str, role='user') -> bool:
         Creates a new account for the user with the provided username, password, and role.
@@ -11,8 +15,8 @@ Functions:
     verify_user(username: str, password: str) -> bool:
         Verifies the user's credentials.
         
-    login_user(username: str, password: str) -> str:
-        Authenticates a user and returns a session token if successful.
+    login_user(username: str, password: str) -> bool:
+        Authenticates a user and returns success or failure.
         
     logout_user(username: str) -> bool:
         Logs out the user by clearing the session token.
