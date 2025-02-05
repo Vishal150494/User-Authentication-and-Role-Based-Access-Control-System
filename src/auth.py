@@ -25,7 +25,7 @@ import json
 from datetime import datetime, timedelta, timezone
 from utils import hash_password
 
-AUTH_FILE = "auth_data.json"
+AUTH_FILE = "data/auth_data.json"
 class AuthManager:
     SESSION_DURATION = 300 # Session expires in 5 minutes (300 seconds)
     

@@ -1,0 +1,49 @@
+Example user data json
+{
+    "users": {
+        "john_doe": {
+            "password": "hashed_password_here",
+            "role": "admin",
+            "session_token": "xyz123",
+            "expires_at": "2025-02-01T10:00:00"
+        }
+    }
+}
+
+Example rbac data json
+{
+    "roles": {
+        "admin": {
+            "permissions": ["create_user", "delete_user", "modify_role"]
+        },
+        "editor": {
+            "permissions": ["edit_content", "publish_content"]
+        },
+        "viewer": {
+            "permissions": ["view_content"]
+        }
+    },
+    "users": {
+        "john_doe": {
+            "roles": ["admin"],
+            "permissions": ["view_content"]  // User-specific permission
+        },
+        "jane_smith": {
+            "roles": ["editor"],
+            "permissions": []
+        },
+        "bob_williams": {
+            "roles": ["viewer"],
+            "permissions": []
+        }
+    },
+    "permissions": [
+        "create_user",
+        "delete_user",
+        "modify_role",
+        "edit_content",
+        "publish_content",
+        "view_content"
+    ]
+}
+
